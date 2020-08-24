@@ -22,6 +22,11 @@ export class MyComponent {
    */
   @Prop() first: string;
 
+  /**
+  * The first name
+  */
+  @Prop() aga: number;
+
   private getText(): string {
     return format(this.first, this.middle, this.last);
   }

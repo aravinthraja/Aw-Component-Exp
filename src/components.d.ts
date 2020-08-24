@@ -10,6 +10,10 @@ export namespace Components {
         /**
           * The first name
          */
+        "aga": number;
+        /**
+          * The first name
+         */
         "first": string;
         /**
           * The last name
@@ -34,6 +38,10 @@ declare global {
 }
 declare namespace LocalJSX {
     interface MyComponent {
+        /**
+          * The first name
+         */
+        "aga"?: number;
         /**
           * The first name
          */
