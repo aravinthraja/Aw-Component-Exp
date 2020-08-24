@@ -27,12 +27,5 @@ jobs:
     - run: npm ci
     - run: npm run build --if-present
     - run: npm test
-    - uses: actions/checkout@v2
-      with:
-        fetch-depth: 0 # Required to retrieve git history
-    - uses: chromaui/action@v1
-      with:
-        buildScriptName: build-storybook
-        projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-        token: ${{ secrets.GITHUB_TOKEN }}
+    - run : npx chromatic -a ${{ secrets.CHROMATIC_PROJECT_TOKEN }} --exit-zero-on-changes
 
