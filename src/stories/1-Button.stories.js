@@ -11,6 +11,7 @@ export default {
 const Template = ({ onClick, children }) => {
   const btn = document.createElement('button');
   btn.type = 'button';
+  btn.className = "storybook-button"
   btn.innerText = children;
   btn.addEventListener('click', onClick);
   return btn;
