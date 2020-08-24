@@ -1,15 +1,11 @@
-// import readme from './readme.md'
 
 export default {
-    title: 'My Component',
-    component: 'my-component',
-    parameters: {
-    },
-    argTypes: {
-        first: { control: 'text' },
-        middle: { control: 'text' },
-        last: { control: 'text' },
-    }
+  title: 'My Component',
+  argTypes: {
+    first: { control: 'text' },
+    middle: { control: 'text' },
+    last: { control: 'text' },
+  }
 };
 
 export const Default = ({ first, middle, last }) => `
