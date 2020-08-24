@@ -21,7 +21,8 @@
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "chromatic": "npx chromatic --project-token lxw1ariaa9"
   },
   "dependencies": {
     "@stencil/core": "^1.17.3",

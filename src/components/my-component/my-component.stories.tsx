@@ -1,10 +1,9 @@
-import readme from './readme.md'
+// import readme from './readme.md'
 
 export default {
     title: 'My Component',
     component: 'my-component',
     parameters: {
-        markdown: readme,
     },
     argTypes: {
         first: { control: 'text' },
