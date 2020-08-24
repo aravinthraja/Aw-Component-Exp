@@ -28,4 +28,9 @@ jobs:
     - run: npm run build --if-present
     - run: npm test
     - run : npx chromatic -a ${{ secrets.CHROMATIC_PROJECT_TOKEN }} --exit-zero-on-changes
+    - name: Chromatic Review
+      uses: chromaui/action@v1
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
 
