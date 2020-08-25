@@ -1,7 +1,7 @@
 export default {
   title: 'Aw Button',
   argTypes: {
-    label: { control: 'text' },
+    label: { control: 'text', defaultValue: 'Hello' },
   },
 };
 

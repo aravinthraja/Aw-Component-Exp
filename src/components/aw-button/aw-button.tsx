@@ -10,12 +10,9 @@ export class AwButton {
    * The last name
    */
   @Prop() label: string = 'Click Here';
-  componentDidLoad() {
-    this.label = 'Aw button';
-  }
 
   private getText(): string {
-    return this.label === '' ? 'Click Here' : this.label;
+    return this.label === undefined ? 'Click Here' : this.label;
   }
   render() {
     return <button>{this.getText()}</button>;
