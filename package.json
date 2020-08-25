@@ -23,7 +23,6 @@
   },
   "scripts": {
     "build": "stencil build --docs",
-    "debug": "stencil prerender",
     "start": "stencil build --dev --watch --serve --es5",
     "lint": "tslint -p tsconfig.json",
     "lint-fix": "tslint --fix -p tsconfig.json",
@@ -31,14 +30,14 @@
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "tslint": "^6.1.3",
-    "tslint-jest": "^1.0.5",
-    "tslint-stencil": "^1.0.1"
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@stencil/core": "^1.17.3",
-    "@storybook/addon-knobs": "^6.0.16"
+    "@storybook/addon-knobs": "^6.0.16",
+    "tslint": "^6.1.3",
+    "tslint-jest": "^1.0.5",
+    "tslint-stencil": "^1.0.1"
   },
   "husky": {
     "hooks": {
