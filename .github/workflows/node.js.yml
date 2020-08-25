@@ -10,7 +10,7 @@ on:
     branches: [master]
 
 jobs:
-  test:
+  lint:
     runs-on: macos-latest
 
     steps:
@@ -40,11 +40,46 @@ jobs:
       - name: Lint
       - run: npm run lint
 
-      - name: Test
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - run: npm install
+      - run: npm run build --if-present
+
+  test:
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Setting up
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
+      - run: npm install
       - run: npm run test
 
   review:
-    needs: [test]
+    needs: [build]
     runs-on: macos-latest
 
     steps:
