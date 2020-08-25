@@ -14,14 +14,14 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      - name: Cache multiple paths
+      - name: 'Cache multiple paths'
         uses: actions/cache@v2
         with:
+          key: "${{ runner.os }}-${{ hashFiles('**/lockfiles') }}"
           path: |
             ~/cache
             !~/cache/exclude
             **/node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
