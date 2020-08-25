@@ -17,16 +17,19 @@ describe('my-component', () => {
     const element = await page.find('my-component >>> div');
     expect(element.textContent).toEqual(`Hello, World! I'm `);
 
-    component.setProperty('first', 'James');
+    component.setProperty('first', 'Aravinth');
     await page.waitForChanges();
-    expect(element.textContent).toEqual(`Hello, World! I'm James`);
 
-    component.setProperty('last', 'Quincy');
-    await page.waitForChanges();
-    expect(element.textContent).toEqual(`Hello, World! I'm James Quincy`);
+    expect(element.textContent).toEqual(`Hello, World! I'm Aravinth`);
 
-    component.setProperty('middle', 'Earl');
+    component.setProperty('last', 'Raja');
     await page.waitForChanges();
-    expect(element.textContent).toEqual(`Hello, World! I'm James Earl Quincy`);
+
+    expect(element.textContent).toEqual(`Hello, World! I'm Aravinth Raja`);
+
+    component.setProperty('middle', '-');
+    await page.waitForChanges();
+
+    expect(element.textContent).toEqual(`Hello, World! I'm Aravinth - Raja`);
   });
 });

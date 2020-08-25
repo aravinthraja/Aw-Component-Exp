@@ -9,7 +9,7 @@
 
 | Property | Attribute | Description   | Type     | Default        |
 | -------- | --------- | ------------- | -------- | -------------- |
-| `label`  | `label`   | The last name | `string` | `"Click Here"` |
+| `label`  | `label`   | The last name | `string` | `'Click Here'` |
 
 
 ----------------------------------------------

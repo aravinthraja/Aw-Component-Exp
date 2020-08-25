@@ -4,7 +4,10 @@ import { reactOutputTarget } from '@stencil/react-output-target';
 export const config: Config = {
   namespace: 'aw-component-exp',
   taskQueue: 'async',
-
+  testing: {
+    // browserHeadless: true,
+    // browserDevtools: true,
+  },
   outputTargets: [
     reactOutputTarget({
       componentCorePackage: 'aw-component-exp',
@@ -15,7 +18,7 @@ export const config: Config = {
       esmLoaderPath: '../loader',
     },
     {
-      type: 'dist-custom-elements-bundle'
+      type: 'dist-custom-elements-bundle',
     },
     {
       type: 'docs-readme',

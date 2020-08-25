@@ -23,6 +23,7 @@
   },
   "scripts": {
     "build": "stencil build --docs",
+    "debug": "stencil prerender",
     "start": "stencil build --dev --watch --serve --es5",
     "lint": "tslint -p tsconfig.json",
     "lint-fix": "tslint --fix -p tsconfig.json",
