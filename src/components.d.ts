@@ -6,6 +6,12 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface AwButton {
+        /**
+          * The last name
+         */
+        "label": string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -26,6 +32,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLAwButtonElement extends Components.AwButton, HTMLStencilElement {
+    }
+    var HTMLAwButtonElement: {
+        prototype: HTMLAwButtonElement;
+        new (): HTMLAwButtonElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -33,10 +45,17 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "aw-button": HTMLAwButtonElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
+    interface AwButton {
+        /**
+          * The last name
+         */
+        "label"?: string;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -56,6 +75,7 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface IntrinsicElements {
+        "aw-button": AwButton;
         "my-component": MyComponent;
     }
 }
@@ -63,6 +83,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "aw-button": LocalJSX.AwButton & JSXBase.HTMLAttributes<HTMLAwButtonElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }

@@ -1,9 +1,9 @@
 {
   "name": "aw-component-exp",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Stencil Component Starter",
   "main": "dist/index.js",
-  "module": "dist/custom-elements/index.js",
+  "module": "dist/index.mjs",
   "es2015": "dist/esm/index.mjs",
   "es2017": "dist/esm/index.mjs",
   "types": "dist/custom-elements/index.d.ts",
@@ -14,23 +14,41 @@
     "dist/",
     "loader/"
   ],
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/@aravinthraja"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aravinthraja/Aw-Component-Exp.git"
+  },
   "scripts": {
     "build": "stencil build --docs",
     "start": "stencil build --dev --watch --serve --es5",
+    "lint": "tslint -p tsconfig.json",
+    "lint-fix": "tslint --fix -p tsconfig.json",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "generate": "stencil generate",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "chromatic": "npx chromatic --project-token lxw1ariaa9"
+    "tslint": "^6.1.3",
+    "tslint-jest": "^1.0.5",
+    "tslint-stencil": "^1.0.1"
   },
   "dependencies": {
     "@stencil/core": "^1.17.3",
     "@storybook/addon-knobs": "^6.0.16"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm run lint-fix"
+    }
+  },
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.11.4",
+    "@stencil/eslint-plugin": "^0.3.1",
     "@storybook/addon-actions": "^6.0.16",
     "@storybook/addon-controls": "^6.0.16",
     "@storybook/addon-essentials": "^6.0.16",
@@ -40,14 +58,22 @@
     "@storybook/web-components": "^6.0.16",
     "@types/jest": "25.2.3",
     "@types/puppeteer": "2.0.1",
+    "@typescript-eslint/eslint-plugin": "^3.10.0",
+    "@typescript-eslint/parser": "^3.10.0",
     "babel-loader": "^8.1.0",
     "chromatic": "^5.1.0",
     "copy-webpack-plugin": "^6.0.3",
+    "eslint": "^7.7.0",
+    "eslint-plugin-react": "^7.20.6",
+    "husky": "^4.2.5",
     "jest": "26.0.1",
     "jest-cli": "26.0.1",
     "lit-html": "^1.3.0",
+    "prettier": "^2.1.0",
     "puppeteer": "2.1.1",
     "react-is": "^16.13.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.3.0",
     "write-file-webpack-plugin": "^4.5.1"
   }
 }

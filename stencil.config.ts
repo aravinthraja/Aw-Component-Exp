@@ -1,9 +1,15 @@
 import { Config } from '@stencil/core';
+import { reactOutputTarget } from '@stencil/react-output-target';
 
 export const config: Config = {
   namespace: 'aw-component-exp',
   taskQueue: 'async',
+
   outputTargets: [
+    reactOutputTarget({
+      componentCorePackage: 'aw-component-exp',
+      proxiesFile: './dist/react/components.ts',
+    }),
     {
       type: 'dist',
       esmLoaderPath: '../loader',

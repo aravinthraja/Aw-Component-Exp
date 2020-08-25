@@ -1,0 +1,20 @@
+{
+    "extends": [
+        "tslint:recommended",
+        "tslint-stencil/default",
+        "tslint-jest",
+        "tslint-config-prettier"
+    ],
+    "rulesDirectory": [
+        "tslint-plugin-prettier"
+    ],
+    "path": [
+        "src/**/*.*.{ts,tsx}",
+        "src/**/*.{ts,tsx}"
+    ],
+    "rules": {
+        "prettier": true,
+        "no-alias-methods": true,
+        "expect-expect": true
+    }
+}

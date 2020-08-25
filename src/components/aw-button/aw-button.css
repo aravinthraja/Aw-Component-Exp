@@ -1,0 +1,26 @@
+:host {
+    display: block;
+  }
+  
+  div{
+    background-color:orange;
+  }
+
+  button {
+    height: 36px;
+    color: #fff;
+    border-radius: 6px;
+    background-color: transparent;
+    border: none;
+    outline: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    outline: 0;
+    position: relative;
+    transition: all .3s;
+    cursor: pointer;
+    background-color: #6285ff;
+    color: #fff;
+}
