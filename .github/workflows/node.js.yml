@@ -10,7 +10,7 @@ on:
     branches: [master]
 
 jobs:
-  lint-tesing:
+  test:
     runs-on: macos-latest
 
     steps:
@@ -42,11 +42,9 @@ jobs:
 
       - name: Test
       - run: npm run test
-  build:
-    runs-on: macos-latest
 
   review:
-    needs: [lint-tesing]
+    needs: [test]
     runs-on: macos-latest
 
     steps:
